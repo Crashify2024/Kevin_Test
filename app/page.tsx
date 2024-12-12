@@ -1,32 +1,32 @@
-"use client"
+"use client";
 
-import { useEffect } from 'react'
-import { Hero } from '@/components/hero';
-import { Features } from '@/components/features';
-import Verguetungsmodell from '@/components/verguetungsmodell';
-import { FAQ } from '@/components/faq';
-import { DownloadApp } from '@/components/download-app';
-import { UeberUns } from "@/components/ueber-uns"
-import { ContactCTA } from "@/components/contact-cta"
-import { ContactSection } from "@/components/contact-section"
+import { ContactCTA } from "@/components/contact-cta";
+import { ContactSection } from "@/components/contact-section";
+import { DownloadApp } from "@/components/download-app";
+import { FAQ } from "@/components/faq";
+import { Features } from "@/components/features";
+import { Hero } from "@/components/hero";
+import { UeberUns } from "@/components/ueber-uns";
+import Verguetungsmodell from "@/components/verguetungsmodell";
+import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
     const scrollToContact = () => {
-      const contactSection = document.getElementById('kontakt');
+      const contactSection = document.getElementById("kontakt");
       if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
+        contactSection.scrollIntoView({ behavior: "smooth" });
       }
     };
 
-    window.addEventListener('scrollToContact', scrollToContact);
+    window.addEventListener("scrollToContact", scrollToContact);
 
-    if (window.location.hash === '#kontakt') {
+    if (window.location.hash === "#kontakt") {
       scrollToContact();
     }
 
     return () => {
-      window.removeEventListener('scrollToContact', scrollToContact);
+      window.removeEventListener("scrollToContact", scrollToContact);
     };
   }, []);
 
@@ -55,6 +55,5 @@ export default function Home() {
         <ContactSection />
       </div>
     </>
-  )
+  );
 }
-

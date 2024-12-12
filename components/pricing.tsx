@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
-import { Check } from 'lucide-react'
+import { Button } from "@/components/ui/button";
+import { Check } from "lucide-react";
 
 export function Pricing() {
   return (
@@ -55,6 +55,5 @@ export function Pricing() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

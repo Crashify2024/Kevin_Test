@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group"
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
+import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
+import * as React from "react";
 
 const ToggleGroup = React.forwardRef<
   React.ElementRef<typeof ToggleGroupPrimitive.Root>,
@@ -16,9 +16,9 @@ const ToggleGroup = React.forwardRef<
     )}
     {...props}
   />
-))
+));
 
-ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName
+ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName;
 
 const ToggleGroupItem = React.forwardRef<
   React.ElementRef<typeof ToggleGroupPrimitive.Item>,
@@ -32,9 +32,8 @@ const ToggleGroupItem = React.forwardRef<
     )}
     {...props}
   />
-))
+));
 
-ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName
+ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName;
 
-export { ToggleGroup, ToggleGroupItem }
-
+export { ToggleGroup, ToggleGroupItem };

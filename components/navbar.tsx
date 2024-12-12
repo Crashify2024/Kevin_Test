@@ -1,33 +1,33 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { Menu, Download } from 'lucide-react'
+import { Download, Menu } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import * as React from "react";
 
-import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
     const yOffset = -80; // Adjust this value based on your navbar height
-    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({top: y, behavior: 'smooth'});
+    const y =
+      element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
   }
 };
 
 export function Navbar() {
   const router = useRouter();
 
-  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+  const handleNavigation = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    path: string
+  ) => {
     e.preventDefault();
-    if (path === '/') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (path === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       const sectionId = path.slice(1); // Remove the leading '#'
       scrollToSection(sectionId);
@@ -38,17 +38,40 @@ export function Navbar() {
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md shadow-sm">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <Link href="/" className="flex items-center space-x-2" onClick={(e) => handleNavigation(e, '/')}>
-            <span className="text-xl sm:text-2xl font-bold text-foreground">CRASHIFY</span>
+          <Link
+            href="/"
+            className="flex items-center space-x-2"
+            onClick={(e) => handleNavigation(e, "/")}
+          >
+            <span className="text-xl sm:text-2xl font-bold text-foreground">
+              CRASHIFY
+            </span>
           </Link>
           <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
-            <NavItem href="/" onNavigate={handleNavigation}>Startseite</NavItem>
-            <NavItem href="#vorteile" onNavigate={handleNavigation}>Lösungen</NavItem>
-            <NavItem href="#verguetungsmodell" onNavigate={handleNavigation}>Vergütungsmodell</NavItem>
-            <NavItem href="#faq" onNavigate={handleNavigation}>FAQ</NavItem>
-            <NavItem href="#ueber-uns" onNavigate={handleNavigation}>Über Uns</NavItem>
-            <NavItem href="#kontakt-formular" onNavigate={handleNavigation}>Kontakt</NavItem>
-            <Button onClick={() => scrollToSection('download')} variant="outline" size="sm" className="ml-4">
+            <NavItem href="/" onNavigate={handleNavigation}>
+              Startseite
+            </NavItem>
+            <NavItem href="#vorteile" onNavigate={handleNavigation}>
+              Lösungen
+            </NavItem>
+            <NavItem href="#verguetungsmodell" onNavigate={handleNavigation}>
+              Vergütungsmodell
+            </NavItem>
+            <NavItem href="#faq" onNavigate={handleNavigation}>
+              FAQ
+            </NavItem>
+            <NavItem href="#ueber-uns" onNavigate={handleNavigation}>
+              Über Uns
+            </NavItem>
+            <NavItem href="#kontakt-formular" onNavigate={handleNavigation}>
+              Kontakt
+            </NavItem>
+            <Button
+              onClick={() => scrollToSection("download")}
+              variant="outline"
+              size="sm"
+              className="ml-4"
+            >
               <Download className="mr-2 h-4 w-4" />
               Download
             </Button>
@@ -64,11 +87,17 @@ export function Navbar() {
               <div className="grid gap-4 py-4">
                 <DialogNavItem href="/">Startseite</DialogNavItem>
                 <DialogNavItem href="#vorteile">Lösungen</DialogNavItem>
-                <DialogNavItem href="#verguetungsmodell">Vergütungsmodell</DialogNavItem>
+                <DialogNavItem href="#verguetungsmodell">
+                  Vergütungsmodell
+                </DialogNavItem>
                 <DialogNavItem href="#faq">FAQ</DialogNavItem>
                 <DialogNavItem href="#ueber-uns">Über Uns</DialogNavItem>
                 <DialogNavItem href="#kontakt-formular">Kontakt</DialogNavItem>
-                <Button onClick={() => scrollToSection('download')} variant="outline" className="w-full">
+                <Button
+                  onClick={() => scrollToSection("download")}
+                  variant="outline"
+                  className="w-full"
+                >
                   <Download className="mr-2 h-4 w-4" />
                   Download
                 </Button>
@@ -78,20 +107,34 @@ export function Navbar() {
         </div>
       </nav>
     </header>
-  )
+  );
 }
 
-const NavItem = ({ href, children, onNavigate }: { href: string; children: React.ReactNode; onNavigate: (e: React.MouseEvent<HTMLAnchorElement>, path: string) => void }) => (
-  <Link 
+const NavItem = ({
+  href,
+  children,
+  onNavigate,
+}: {
+  href: string;
+  children: React.ReactNode;
+  onNavigate: (e: React.MouseEvent<HTMLAnchorElement>, path: string) => void;
+}) => (
+  <Link
     href={href}
     onClick={(e) => onNavigate(e, href)}
     className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
   >
     {children}
   </Link>
-)
+);
 
-const DialogNavItem = ({ href, children }: { href: string; children: React.ReactNode }) => (
+const DialogNavItem = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => (
   <Link
     href={href}
     onClick={(e) => {
@@ -102,5 +145,4 @@ const DialogNavItem = ({ href, children }: { href: string; children: React.React
   >
     {children}
   </Link>
-)
-
+);

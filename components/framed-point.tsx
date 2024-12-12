@@ -1,8 +1,8 @@
-import { Check } from 'lucide-react'
+import { Check } from "lucide-react";
 
 interface FramedPointProps {
-  title: string
-  points: string[]
+  title: string;
+  points: string[];
 }
 
 export function FramedPoint({ title, points }: FramedPointProps) {
@@ -20,6 +20,5 @@ export function FramedPoint({ title, points }: FramedPointProps) {
         ))}
       </ul>
     </div>
-  )
+  );
 }
-

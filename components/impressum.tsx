@@ -15,18 +15,19 @@ export function Impressum() {
 
           <h3 className="text-2xl font-semibold">Kontaktinformationen</h3>
           <p>
-            Telefon: 01515 5358483<br />
+            Telefon: 01515 5358483
+            <br />
             Mail: info@crashify.de
           </p>
 
           <h3 className="text-2xl font-semibold">Umsatzsteuer-Nr.</h3>
           <p>
-            DE329132861<br />
+            DE329132861
+            <br />
             Finanzamt Mühlacker
           </p>
         </div>
       </div>
     </section>
-  )
+  );
 }
-

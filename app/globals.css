@@ -115,11 +115,19 @@
 }
 
 .bg-gradient {
-  background: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(224 71% 45%) 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(217 91% 60%) 0%,
+    hsl(224 71% 45%) 100%
+  );
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--accent)) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -145,7 +153,12 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.2;
   margin-bottom: 0.5em;
 }
@@ -167,7 +180,11 @@ section {
 
 /* Subtle gradient backgrounds */
 .bg-gradient-subtle {
-  background: linear-gradient(135deg, hsl(221.2 83.2% 53.3%) 0%, hsl(224.3 76.3% 48%) 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(221.2 83.2% 53.3%) 0%,
+    hsl(224.3 76.3% 48%) 100%
+  );
 }
 
 /* Improved content flow */
@@ -196,42 +213,76 @@ section {
 }
 
 /* Responsive utilities */
-.mobile-only { @apply block md:hidden; }
-.desktop-only { @apply hidden md:block; }
+.mobile-only {
+  @apply block md:hidden;
+}
+.desktop-only {
+  @apply hidden md:block;
+}
 
 /* Improved responsive typography */
 @screen sm {
-  h1 { @apply text-3xl; }
-  h2 { @apply text-2xl; }
-  h3 { @apply text-xl; }
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
 }
 
 @screen md {
-  h1 { @apply text-4xl; }
-  h2 { @apply text-3xl; }
-  h3 { @apply text-2xl; }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
 }
 
 @screen lg {
-  h1 { @apply text-5xl; }
-  h2 { @apply text-4xl; }
-  h3 { @apply text-3xl; }
+  h1 {
+    @apply text-5xl;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+  h3 {
+    @apply text-3xl;
+  }
 }
 
 /* Improved spacing for mobile */
 @screen sm {
-  .container { @apply px-4; }
-  section { @apply py-12; }
+  .container {
+    @apply px-4;
+  }
+  section {
+    @apply py-12;
+  }
 }
 
 /* Improved button sizing for mobile */
 @screen sm {
-  .button, .btn, button { @apply text-sm py-2 px-4; }
+  .button,
+  .btn,
+  button {
+    @apply text-sm py-2 px-4;
+  }
 }
 
 /* Improved form element sizing for mobile */
 @screen sm {
-  input, select, textarea { @apply text-sm py-2 px-3; }
+  input,
+  select,
+  textarea {
+    @apply text-sm py-2 px-3;
+  }
 }
 
 /* Responsive video container */
@@ -281,4 +332,3 @@ section {
   opacity: 0;
   transition: opacity 300ms ease-in;
 }
-

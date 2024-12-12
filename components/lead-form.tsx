@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 export function LeadForm() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+    event.preventDefault();
     // Here you would typically send the form data to your server
-    console.log("Form submitted")
-    setIsSubmitted(true)
-  }
+    console.log("Form submitted");
+    setIsSubmitted(true);
+  };
 
   if (isSubmitted) {
     return (
@@ -22,7 +22,7 @@ export function LeadForm() {
         <h3 className="text-2xl font-bold mb-4">Vielen Dank!</h3>
         <p>Wir werden uns in Kürze bei Ihnen melden.</p>
       </div>
-    )
+    );
   }
 
   return (
@@ -43,8 +43,9 @@ export function LeadForm() {
         <Label htmlFor="message">Nachricht</Label>
         <Textarea id="message" />
       </div>
-      <Button type="submit" className="w-full">Anfrage senden</Button>
+      <Button type="submit" className="w-full">
+        Anfrage senden
+      </Button>
     </form>
-  )
+  );
 }
-
